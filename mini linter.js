@@ -102,11 +102,7 @@ overusedWords.forEach(function(overWord) {
       overWordCount++;
     }
   });
-  if (overWordCount != 1) {
   console.log('The Word ' + overWord.toUpperCase() + ' was used ' + overWordCount + ' times\n');
-} else {
-  console.log('The Word ' + overWord.toUpperCase() + ' was used ' + overWordCount + ' time\n');
-}
 });
 
 
