@@ -4,14 +4,14 @@ let overusedWords = ['really', 'very', 'basically','zach'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 let storyWords = story.split(' ');
-/// ^^^^^ set initial variables
+///  set initial variables
 
 /// log original story word count
 console.log('The original story contains ' + storyWords.length + ' words\n');
 
 /// remove unnecessary words
 let betterWords = storyWords.filter(word => !unnecessaryWords.includes(word));
-console.log('The story contains ' + betterWords.length + ' words after removing unnecessary words\n');
+//console.log('The story contains ' + betterWords.length + ' words after removing unnecessary words\n');
 
 /// count and log over used words
 /*方法一：overusedWords.forEach(function(overWord) {
@@ -24,7 +24,7 @@ console.log('The story contains ' + betterWords.length + ' words after removing 
   console.log('The Word ' + overWord.toUpperCase() + ' was used ' + overWordCount + ' times\n');
   
 });*/
-//方法二：
+let result3 = []
 let overusedWordsIndex =betterWords.filter(word=>
  overusedWords.includes(word));
 	
@@ -34,7 +34,11 @@ let overusedWordsIndex =betterWords.filter(word=>
     if(overusedWords[i]===overusedWordsIndex[j]){
       count++;}
   }
-     console.log('The Word ' + overusedWords[i] + ' was used ' + count + ' times\n');
+  let obj = {}
+  obj.overusedWords = overusedWords[i]
+  obj.count = count
+  result3.push(obj)
+   //console.log('The Word ' + overusedWords[i]+ ' was used ' + count + ' times\n');
  
   }   
 
@@ -45,15 +49,19 @@ betterWords.forEach(word => {
     sentenceCount++;
   }
 });
-console.log('There are ' + sentenceCount + ' sentences in the story\n');
+const logInfo = (param1, param2, param3) => {
+  console.log('Word count: ' + param1);
+  console.log('Sentence count: ' + param2 +'\n');
+	param3.forEach((item) => {
+    console.log('The Word ' + item.overusedWords+ ' was used ' + item.count + ' times\n');
+  })
+}
 
-/// log the refined story
-//console.log(betterWords.join(' ') + '\n');
+logInfo(betterWords.length,sentenceCount,result3)
 
-
+console.log(betterWords.join(' '));
 
 ///REMOVE AND REPLACE EVERY OTHER INSTANCE OF OVER USED WORDS
-console.log('----------------------------------------------------');
 console.log('\nProject: Remove and replace every other instance of overused words!\n\n');
 
 ///Create an array to hold a count for each item in 'overusedWords'
