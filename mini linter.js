@@ -33,7 +33,6 @@ let overusedWordsIndex =betterWords.filter(word=>
   for(let j=0; j<overusedWordsIndex.length;j++){
     if(overusedWords[i]===overusedWordsIndex[j]){
       count++;}
-
   }
      console.log('The Word ' + overusedWords[i] + ' was used ' + count + ' times\n');
  
