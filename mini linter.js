@@ -45,7 +45,7 @@ betterWords.forEach(word => {
     sentenceCount++;
   }
 });
-console.log('There are ' + (sentenceCount + 1) + ' sentences in the story\n');
+console.log('There are ' + sentenceCount + ' sentences in the story\n');
 
 /// log the refined story
 //console.log(betterWords.join(' ') + '\n');
